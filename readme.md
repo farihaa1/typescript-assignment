@@ -19,6 +19,11 @@ interface Person {
   age: number;
 }
 
+const john: Person = {
+  name: "John Doe",
+  age: 30
+};
+
 // Can extend other interfaces
 interface Employee extends Person {
   salary: number;
@@ -69,9 +74,11 @@ type Data = [number, string];
 
 **When to Use What?**
 
-1.Use interface when working with object shapes, OOP-style code, or you want to take advantage of declaration merging.
+1.Use `interface` when working with object shapes, OOP-style code, or you want to take advantage of declaration merging.
 
-2.Use type when you need unions, tuples, intersections, or aliasing primitives and functions.
+2.Use `type` when you need unions, tuples, intersections, or aliasing primitives and functions.
+
+
 
 ## Difference between any, unknown, and never types in TypeScript
 
@@ -127,7 +134,7 @@ if (typeof value === "string") {
 
 🧠 Pro Tip: Use unknown over any when you want safe handling of dynamically typed data.
 
-**never Type**
+## `never` Type
 
 ### What is `never`?
 
@@ -168,7 +175,7 @@ function infiniteLoop(): never {
 
 **_Final Thoughts_**
 
-any provides maximum flexibility but sacrifices type safety, making it useful in quick-and-dirty situations or integrating external data.
-unknown is a safer alternative to any, enforcing type checks before performing operations on unknown data.
-never is used for functions or values that never return, representing unreachable code or errors.
+1.any provides maximum flexibility but sacrifices type safety, making it useful in quick-and-dirty situations or integrating external data.
+2.unknown is a safer alternative to any, enforcing type checks before performing operations on unknown data.
+3.never is used for functions or values that never return, representing unreachable code or errors.
 
