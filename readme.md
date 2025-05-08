@@ -138,9 +138,9 @@ if (typeof value === "string") {
 
 ### What is `never`?
 
-The never type represents values that will never occur. It's typically used in cases where you expect an impossible situation, such as when a function throws an error or enters an infinite loop.
+The `never` type represents values that will never occur. It's typically used in cases where you expect an impossible situation, such as when a function throws an error or enters an infinite loop.
 
-A common use of never is in functions that never return a value.
+A common use of `never` is in functions that never return a value.
 
 ```ts
 function throwError(message: string): never {
@@ -157,7 +157,7 @@ function infiniteLoop(): never {
 ### When to use `never`?
 
 1.When a function always throws an error or doesn’t complete its execution.
-2.In exhaustive checks, such as when dealing with union types in switch statements to ensure all cases are handled.
+2.In exhaustive checks, such as when dealing with `union` types in `switch` statements to ensure all cases are handled.
 
 ⚠️ Caution: You should not assign never to a variable because it represents an impossible value.
 
@@ -175,7 +175,7 @@ function infiniteLoop(): never {
 
 **_Final Thoughts_**
 
-1.any provides maximum flexibility but sacrifices type safety, making it useful in quick-and-dirty situations or integrating external data.
-2.unknown is a safer alternative to any, enforcing type checks before performing operations on unknown data.
-3.never is used for functions or values that never return, representing unreachable code or errors.
+1. any provides maximum flexibility but sacrifices type safety, making it useful in quick-and-dirty situations or integrating external data.
+2. unknown is a safer alternative to any, enforcing type checks before performing operations on unknown data.
+3. never is used for functions or values that never return, representing unreachable code or errors.
 
