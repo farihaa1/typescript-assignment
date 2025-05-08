@@ -69,9 +69,9 @@ type Data = [number, string];
 
 **When to Use What?**
 
-    Use interface when working with object shapes, OOP-style code, or you want to take advantage of declaration merging.
+1.Use interface when working with object shapes, OOP-style code, or you want to take advantage of declaration merging.
 
-    Use type when you need unions, tuples, intersections, or aliasing primitives and functions.
+2.Use type when you need unions, tuples, intersections, or aliasing primitives and functions.
 
 ## Difference between any, unknown, and never types in TypeScript
 
@@ -79,7 +79,7 @@ TypeScript introduces advanced types that allow for better type safety and flexi
 
 ---
 
-## 🧩 `any` Type
+## `any` Type
 
 ### What is `any`?
 
@@ -95,16 +95,15 @@ anything = true;
 
 When to use any?
 
-    When integrating with third-party JavaScript libraries that don’t have type definitions.
+1.When integrating with third-party JavaScript libraries that don’t have type definitions.
+2.When you're migrating from JavaScript to TypeScript and need a temporary solution.
+3.For quick prototyping, where you’re willing to sacrifice type safety for flexibility.
 
-    When you're migrating from JavaScript to TypeScript and need a temporary solution.
+⚠️ Caution: Overusing any defeats the purpose of using TypeScript, which is to gain strong typing and safety.
 
-    For quick prototyping, where you’re willing to sacrifice type safety for flexibility.
+## `unknown` Type
 
-    ⚠️ Caution: Overusing any defeats the purpose of using TypeScript, which is to gain strong typing and safety.
-
-unknown Type
-What is unknown?
+### What is `unknown`?
 
 The unknown type is similar to any, but with a crucial difference: TypeScript will not allow operations on a value of type unknown without first asserting or checking the type. This adds an additional layer of safety compared to any.
 
@@ -120,18 +119,17 @@ if (typeof value === "string") {
 }
 ```
 
-When to use unknown?
+### When to use `unknown`?
 
-    When you want to enforce type checks before performing operations on a variable.
+1. When you want to enforce type checks before performing operations on a variable.
+2. If you’re working with data of uncertain type, such as from APIs or external sources.
+3. Use it when type safety is more important than flexibility.
 
-    If you’re working with data of uncertain type, such as from APIs or external sources.
-
-    Use it when type safety is more important than flexibility.
-
-    🧠 Pro Tip: Use unknown over any when you want safe handling of dynamically typed data.
+🧠 Pro Tip: Use unknown over any when you want safe handling of dynamically typed data.
 
 **never Type**
-What is never?
+
+### What is `never`?
 
 The never type represents values that will never occur. It's typically used in cases where you expect an impossible situation, such as when a function throws an error or enters an infinite loop.
 
@@ -149,13 +147,12 @@ function infiniteLoop(): never {
 }
 ```
 
-When to use never?
+### When to use `never`?
 
-    When a function always throws an error or doesn’t complete its execution.
+1.When a function always throws an error or doesn’t complete its execution.
+2.In exhaustive checks, such as when dealing with union types in switch statements to ensure all cases are handled.
 
-    In exhaustive checks, such as when dealing with union types in switch statements to ensure all cases are handled.
-
-    ⚠️ Caution: You should not assign never to a variable because it represents an impossible value.
+⚠️ Caution: You should not assign never to a variable because it represents an impossible value.
 
 ## Features Comparison: `any`, `unknown`, and `never` Types in TypeScript
 
@@ -171,9 +168,7 @@ When to use never?
 
 **_Final Thoughts_**
 
-    any provides maximum flexibility but sacrifices type safety, making it useful in quick-and-dirty situations or integrating external data.
-
-    unknown is a safer alternative to any, enforcing type checks before performing operations on unknown data.
-
-    never is used for functions or values that never return, representing unreachable code or errors.
+any provides maximum flexibility but sacrifices type safety, making it useful in quick-and-dirty situations or integrating external data.
+unknown is a safer alternative to any, enforcing type checks before performing operations on unknown data.
+never is used for functions or values that never return, representing unreachable code or errors.
 
